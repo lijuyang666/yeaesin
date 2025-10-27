@@ -1,0 +1,15 @@
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        dic={}
+        ss=set(nums)
+        for s in ss:
+            dic[s]=0
+        for i in range(len(nums)):
+            dic[nums[i]]+=1
+        for k,v in dic.items():
+            if v==1:
+                return k
